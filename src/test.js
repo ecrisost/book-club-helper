@@ -1,10 +1,3 @@
-import 'firebase/firestore';
-
-const firebase = require('firebase');
-// Required for side-effects
-require('firebase/firestore');
-
-
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyARFjH3dYMUsxqkRZR2TCNMIrPUpxHLIJY",
