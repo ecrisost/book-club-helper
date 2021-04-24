@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/ecrisost/book-club-helper#readme",
   "dependencies": {
-    "firebase": "^8.4.1"
+    "firebase": "^8.4.2"
   }
 }
