@@ -19,7 +19,7 @@ var db = firebase.firestore();
  * @param {*} docName 
  * @param {*} docData 
  */
-export function addDoc(collectionName, docName, docData)
+export default function addDoc(collectionName, docName, docData)
 {
     db.collection(collectionName).doc(docName).set(docData)
         .then(() =>
