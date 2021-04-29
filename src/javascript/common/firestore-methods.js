@@ -33,7 +33,19 @@ export default function addDoc(collectionName, docName, docData)
  * Read all entries in book list
  * @param {*} collectionName 
  */
-export function readAll(collectionName)
+export async function readAll(collectionName)
 {
-    return db.collection(collectionName).get();
+    var collectionReference = db.collection(collectionName);
+    let docList = [];
+    //Get them
+    await collectionReference.get().then((querySnapshot) => {
+     //querySnapshot is "iteratable" itself
+        querySnapshot.forEach((collectionDoc) => {
+
+            //If you want to get doc data
+            var collectionDocData = collectionDoc.data()
+            docList.push(collectionDocData);
+        });
+    });
+    return docList;
 }

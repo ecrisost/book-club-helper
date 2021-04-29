@@ -1,4 +1,4 @@
-import {convertToCamelCase, splitByComma} from './common/utils.js';
+import {convertToCamelCase, splitByComma, generateUUID} from './common/utils.js';
 import addDoc from './common/firestore-methods.js';
 
 /**
@@ -24,7 +24,9 @@ $(document).ready(function(){
           lastName: $('#authorLastName').val(),
           genre: splitByComma($('#genre').val()),
           summary: $('#summary').val(),
-          triggers: tws
+          triggers: tws,
+          uuid: generateUUID(),
+          votes: 0
         }
         addDoc('booksSelection', convertToCamelCase(bookTitleVal), docData);
     });
