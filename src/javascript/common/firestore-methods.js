@@ -49,3 +49,4 @@ export async function readAll(collectionName)
     });
     return docList;
 }
+
