@@ -6,7 +6,6 @@ $(document).ready(async function()
     console.dir("BookList content: " + bookList);
     
     let cardRight = '../contents/bookListCard.html';
-    let cardLeft = '../contest/booksListCardLef.html';
     // Populate 
     $.get(cardRight, function(data) {
         bookList.forEach(element => {
@@ -17,16 +16,11 @@ $(document).ready(async function()
                     .find('[data-name=' + key + ']')
                     .text(element[key]);
             }
-            $(template).find('input').attr('value', element.uuid);
+            $(template).find('input').attr('name', element.uuid);
             $('#bookList').append(template);
         });
     });
 
-    $(document).ready(function(){
-        $('#bookListForm').submit(function(event){
-            console.log("Form works!");
-        });
-    });
 });
 
 
