@@ -23,6 +23,27 @@ $(document).ready(async function()
 
 });
 
+$(document).ready(async function()
+{
+    $("form").submit(function(event)
+    {
+        var formData = {
+            uuid: $(this).attr('name').val()
+        };
+    });
+
+    $.ajax({
+       type:"POST",
+       url: "../php/select.php",
+       data: formData,
+       dataType: "json",
+       encode: true,
+    }).done(function (data) {
+        console.log(data);
+    });
+
+});
+
 
 
 
