@@ -11,13 +11,20 @@ jobs:
     steps:
       - run: | 
           echo "Hello World!"
-          echo ${{ github.base_ref }}
+          echo ${{ github.base_ref == 'main'}}
+          echo ${{ github.event.pull_request.merged == true }}
   
-  # update-release-draft:
-  #   if: | 
-  #     (github.head_ref == 'main' && github.event.pull_request.merged == true)
-
-  #   permissions:
-  #     contents: write
-  #     pull_requests: write
-    
+  update-release-draft:
+    if: | 
+      (github.base_ref == 'main')
+    permissions:
+      contents: write
+      pull_requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: release-drafter/release-drafter@v5
+        with:
+          config-name: actions/release-drafter.yml
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
