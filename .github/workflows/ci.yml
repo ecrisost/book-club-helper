@@ -1,0 +1,23 @@
+name: CI
+
+on 
+  push: 
+    branches: [main, dev]
+  pull_request:
+    branches: [main, dev]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      run: echo "Hello World!"
+      run: echo ${{ github.head_ref }}
+  
+  # update-release-draft:
+  #   if: | 
+  #     (github.head_ref == 'main' && github.event.pull_request.merged == true)
+
+  #   permissions:
+  #     contents: write
+  #     pull_requests: write
+    
