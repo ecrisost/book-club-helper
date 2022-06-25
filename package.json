@@ -1,0 +1,28 @@
+{
+  "name": "book-club-helper",
+  "version": "1.0.0",
+  "description": "package.json for karens project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecrisost/book-club-helper.git"
+  },
+  "keywords": [
+    "book-club"
+  ],
+  "author": "Elaine Crisostomo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ecrisost/book-club-helper/issues"
+  },
+  "homepage": "https://github.com/ecrisost/book-club-helper#readme",
+  "dependencies": {
+    "firebase": "^8.4.2"
+  },
+ {
+	"type": "module"
+ }
+}
