@@ -11,7 +11,7 @@ jobs:
     steps:
       - run: | 
           echo "Hello World!"
-          echo ${{ github.ref }}
+          echo ${{ github.base_ref }}
   
   # update-release-draft:
   #   if: | 
