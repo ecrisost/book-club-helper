@@ -1,9 +1,9 @@
 name: CI
 on: 
   push: 
-    branches: [main, dev]
+    branches: [main]
   pull_request:
-    branches: [main, dev]
+    branches: [main]
 
 jobs:
   build:
@@ -15,8 +15,6 @@ jobs:
           echo ${{ github.event.pull_request.merged == true }}
   
   update-release-draft:
-    if: | 
-      (github.base_ref == 'main')
     permissions:
       contents: write
       pull-requests: write
